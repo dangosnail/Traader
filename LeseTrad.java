@@ -12,13 +12,14 @@ class LeseTrad implements Runnable {
     }
 
     //Run metode som skal lese fra fil og legge til resulterende hashmap
+    @Override
     public void run(){
-         try {
+
+        try {
             HashMap<String, Subsekvens> hashmap = monitor.lesFil(filnavn);
             monitor.settInnFlettet(hashmap); 
-         } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e){
             System.out.println("Fil ikke funnet" + e);
-         }
-           
+        }
     }
 }
